@@ -1,0 +1,69 @@
+{
+  "hero": {
+    "title": "Stacky Dash: Tile Adventure!",
+    "subtitle": "Collect, stack, and dash your way to victory in the most relaxing arcade challenge!"
+  },
+  "features": [
+    "Vivid 3D graphics and smooth animations",
+    "Simple swipe controls for all ages",
+    "Challenging levels with unique bridges",
+    "Relaxing, satisfying gameplay",
+    "No violence, just pure fun!"
+  ],
+  "howToPlay": {
+    "controls": [
+      "Swipe left/right/up/down to move",
+      "Collect as many tiles as possible",
+      "Build bridges to cross gaps"
+    ],
+    "tips": [
+      "Plan your path to maximize tile collection",
+      "Avoid dead ends and use bridges wisely",
+      "The more tiles you stack, the higher your score!"
+    ]
+  },
+  "bridgeConstruction": {
+    "title": "Bridge Construction",
+    "description": "Stack tiles to build colorful bridges and reach new platforms. Each bridge is unique and requires strategy to complete!"
+  },
+  "reviews": [
+    {
+      "user": "Emily",
+      "text": "So relaxing and fun! Love the bright colors and simple controls."
+    },
+    {
+      "user": "Liam",
+      "text": "Perfect for quick breaks. The bridge mechanic is super satisfying!"
+    },
+    {
+      "user": "Ava",
+      "text": "My kids and I play together. No ads, no stress, just fun."
+    }
+  ],
+  "news": {
+    "updates": [
+      {
+        "title": "New Levels Added!",
+        "short": "Explore 10 brand new levels with tricky bridges.",
+        "full": "We’ve just released 10 new levels! Each level features new bridge mechanics and colorful environments. Can you master them all?"
+      },
+      {
+        "title": "Performance Boost",
+        "short": "Game now runs smoother on all devices.",
+        "full": "Thanks to your feedback, we’ve optimized Stacky Dash for even smoother gameplay. Enjoy lightning-fast dashes and seamless stacking!"
+      }
+    ],
+    "diaries": [
+      {
+        "title": "My First Mega Stack",
+        "short": "How I stacked 100 tiles in one run.",
+        "full": "I never thought I’d reach 100 tiles! Here’s how I planned my route and used every bridge to my advantage."
+      },
+      {
+        "title": "Bridge Mastery",
+        "short": "Tips for building the perfect bridge.",
+        "full": "After dozens of games, I’ve learned the secrets to bridge building. Here are my top tips for new players!"
+      }
+    ]
+  }
+}

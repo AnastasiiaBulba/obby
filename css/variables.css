@@ -1,0 +1,50 @@
+:root {
+  /* Industrial Rescue Color Palette */
+  --color-bg: #0a0e17;
+  --color-bg-secondary: #1a1f2e;
+  --color-bg-card: #2a2f3e;
+
+  /* Primary Colors - Rescue Theme */
+  --color-primary: #00d4ff;
+  --color-primary-dark: #0099cc;
+  --color-accent: #ff6b35;
+  --color-accent-dark: #e55a2b;
+
+  /* Game Elements */
+  --color-success: #00ff88;
+  --color-warning: #ffaa00;
+  --color-danger: #ff4757;
+  --color-gadget: #8b5cf6;
+
+  /* Text Colors */
+  --color-text: #ffffff;
+  --color-text-secondary: #b8c5d6;
+  --color-text-muted: #64748b;
+
+  /* UI Elements */
+  --color-white: #ffffff;
+  --color-shadow: rgba(0, 212, 255, 0.15);
+  --color-shadow-dark: rgba(0, 0, 0, 0.3);
+
+  /* Border Radius */
+  --radius-main: 12px;
+  --radius-small: 8px;
+  --radius-large: 20px;
+
+  /* Transitions */
+  --transition-main: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 0.15s ease;
+
+  /* Typography */
+  --font-main: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+}

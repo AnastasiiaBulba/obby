@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=360, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta
+      name="description"
+      content="Obby Rescue News – Latest updates, new rescue missions, player stories, and tips for mastering every industrial puzzle!"
+    />
+    <meta
+      name="keywords"
+      content="Obby Rescue, news, updates, rescue, industrial, Australia, game, crew, gadgets, tips, missions"
+    />
+    <title>domain.com – Rescue News & Updates</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon512.jpg" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/obbyrescue-news.css" />
+  </head>
+  <body>
+    <div id="header"></div>
+    <main class="container">
+      <div class="page-section">
+        <section class="news-section" id="game-updates-section">
+          <h2 class="news-title">Rescue News</h2>
+          <div class="news-list">
+            <div class="news-item">
+              <div class="news-item-title">
+                Emergency Update: New Rescue Zones!
+              </div>
+              <div class="news-item-short">
+                Discover 8 new industrial zones packed with fresh rescue
+                missions and hidden dangers.
+              </div>
+              <button class="read-more-btn">Read more</button>
+              <div class="news-item-full" style="display: none">
+                We’re excited to announce 8 brand new rescue zones in Obby
+                Rescue! Each area features unique industrial hazards, new
+                gadgets to master, and more friends to save. Can you outsmart
+                the new traps and complete every mission? Jump in and prove your
+                rescue skills!
+                <img
+                  src="images/play2.jpg"
+                  alt="New Rescue Zone"
+                  class="news-item-img"
+                  style="
+                    display: block;
+                    margin: 1.2em auto 0 auto;
+                    max-width: 180px;
+                    border-radius: 16px;
+                    box-shadow: 0 2px 12px #0002;
+                  "
+                />
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="news-item-title">Performance Upgrade</div>
+              <div class="news-item-short">
+                Faster rescues, smoother gameplay, and improved controls for all
+                devices.
+              </div>
+              <button class="read-more-btn">Read more</button>
+              <div class="news-item-full" style="display: none">
+                Thanks to your feedback, Obby Rescue now runs smoother than
+                ever! Enjoy lightning-fast rescues, responsive controls, and
+                seamless animations—whether you’re playing on mobile or desktop.
+                Focus on saving the crew, not waiting for the game to load!
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="news-section" id="trail-diaries-section">
+          <h2 class="news-title">Player Stories</h2>
+          <div class="news-list">
+            <div class="news-item">
+              <div class="news-item-title">
+                My First Perfect Rescue – How I saved every friend in one run
+              </div>
+              <div class="news-item-short">
+                Saving every crew member felt impossible—until I found the right
+                strategy!
+              </div>
+              <button class="read-more-btn">Read more</button>
+              <div class="news-item-full" style="display: none">
+                In this story, I share how I planned my route, used gadgets at
+                the perfect moment, and avoided every trap to rescue the whole
+                team. Whether you’re new or aiming for a perfect score, these
+                tips will help you become a true rescue hero!
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="news-item-title">Gadget Mastery</div>
+              <div class="news-item-short">
+                Top tips for using rescue gadgets to beat the toughest levels.
+              </div>
+              <button class="read-more-btn">Read more</button>
+              <div class="news-item-full" style="display: none">
+                Gadgets are the key to success in Obby Rescue. After hours of
+                play, I’ve learned some essential tricks:
+                <ul>
+                  <li>
+                    Always collect extra gadgets before entering danger zones.
+                  </li>
+                  <li>
+                    Look ahead for hidden hazards and plan your gadget use.
+                  </li>
+                  <li>Use gadgets to unlock shortcuts and save time.</li>
+                  <li>Practice timing to disable traps at the last second.</li>
+                </ul>
+                Master these skills and you’ll be unstoppable in every rescue
+                mission!
+                <img
+                  src="images/play3.jpg"
+                  alt="Gadget Mastery"
+                  class="news-item-img"
+                  style="
+                    display: block;
+                    margin: 1.2em auto 0 auto;
+                    max-width: 180px;
+                    border-radius: 16px;
+                    box-shadow: 0 2px 12px #0002;
+                  "
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div id="footer"></div>
+    </main>
+    <script src="js/main.js"></script>
+    <script src="js/footer-year.js"></script>
+    <script src="js/cookie-banner.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        console.log("News page loaded");
+        document.querySelectorAll(".news-section").forEach((section) => {
+          section.addEventListener("click", function (e) {
+            if (e.target.classList.contains("read-more-btn")) {
+              const item = e.target.closest(".news-item");
+              const full = item.querySelector(".news-item-full");
+              if (full.style.display === "none") {
+                full.style.display = "block";
+                e.target.textContent = "Show less";
+              } else {
+                full.style.display = "none";
+                e.target.textContent = "Read more";
+              }
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

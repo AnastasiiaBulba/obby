@@ -1,0 +1,634 @@
+@import url("variables.css");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  background: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: all var(--transition-main);
+  position: relative;
+}
+
+a:hover {
+  color: var(--color-accent);
+  transform: translateY(-1px);
+}
+
+/* Header Styles - Industrial Rescue Theme */
+.site-header,
+.site-footer {
+  background: linear-gradient(
+    135deg,
+    var(--color-bg-secondary) 0%,
+    var(--color-bg-card) 100%
+  );
+  color: var(--color-text);
+  box-shadow: 0 4px 20px var(--color-shadow-dark);
+  border-bottom: 2px solid var(--color-primary);
+  position: relative;
+}
+
+.site-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  z-index: 0;
+  pointer-events: none;
+}
+
+.site-header .container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md) 20px;
+  position: relative;
+  z-index: 1;
+  background: none;
+}
+
+.logo {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--color-primary);
+  text-shadow: 0 0 20px var(--color-primary);
+  margin: 0;
+  font-family: var(--font-mono);
+  position: relative;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
+.main-nav ul,
+.footer-nav {
+  display: flex;
+  gap: var(--spacing-md);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.main-nav a,
+.footer-nav a {
+  font-weight: 500;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-main);
+  transition: all var(--transition-main);
+  color: var(--color-text-secondary);
+  background: transparent;
+  border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-nav a:hover,
+.footer-nav a:hover {
+  color: var(--color-text);
+  background: var(--color-bg-card);
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--color-shadow);
+}
+
+/* Burger Menu - Modern Industrial Style */
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 40px;
+  height: 40px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-small);
+  cursor: pointer;
+  margin-left: var(--spacing-md);
+  z-index: 120;
+  transition: all var(--transition-main);
+}
+
+.burger:hover {
+  background: var(--color-primary);
+  transform: scale(1.05);
+}
+
+.burger span {
+  display: block;
+  height: 3px;
+  width: 70%;
+  background: var(--color-text);
+  border-radius: 2px;
+  transition: all var(--transition-main);
+  margin: 0 auto;
+}
+
+.burger:hover span {
+  background: var(--color-bg);
+}
+
+/* Mobile Menu Modal - Industrial Theme */
+.mobile-menu-modal {
+  display: none;
+  position: fixed;
+  z-index: 200;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 14, 23, 0.95);
+  backdrop-filter: blur(10px);
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s;
+}
+
+.mobile-menu-modal.active {
+  display: flex;
+}
+
+.mobile-menu-content {
+  background: var(--color-bg-card);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-large);
+  box-shadow: 0 8px 32px var(--color-shadow-dark);
+  padding: var(--spacing-xl) var(--spacing-lg);
+  min-width: 280px;
+  max-width: 90vw;
+  text-align: center;
+  position: relative;
+  animation: heroFadeIn 0.4s;
+}
+
+.mobile-menu-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.mobile-menu-content a {
+  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all var(--transition-main);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-main);
+  display: block;
+}
+
+.mobile-menu-content a:hover {
+  color: var(--color-primary);
+  background: var(--color-bg);
+  transform: translateX(4px);
+}
+
+.close-modal {
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  background: var(--color-danger);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 1.2rem;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all var(--transition-main);
+}
+
+.close-modal:hover {
+  background: var(--color-accent);
+  transform: scale(1.1);
+}
+
+/* Footer - Industrial Rescue Theme */
+.site-footer {
+  margin-top: var(--spacing-xxl);
+  font-size: 0.95rem;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  border-top: 2px solid var(--color-primary);
+}
+
+.site-footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--spacing-xl) 0 0 0;
+  position: relative;
+  min-height: 100%;
+}
+
+.footer-nav {
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0;
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+
+.footer-contacts {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+}
+
+.footer-contacts a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color var(--transition-main);
+}
+
+.footer-contacts a:hover {
+  color: var(--color-primary);
+}
+
+/* Cookie Banner - Modern Industrial Style */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--color-bg-card);
+  border-top: 2px solid var(--color-primary);
+  padding: var(--spacing-md);
+  box-shadow: 0 -4px 20px var(--color-shadow-dark);
+  z-index: 1000;
+  transform: translateY(100%);
+  transition: transform var(--transition-main);
+  backdrop-filter: blur(10px);
+}
+
+.cookie-banner.show {
+  transform: translateY(0);
+}
+
+.cookie-banner__text {
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.cookie-banner__actions {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cookie-banner__accept {
+  background: var(--color-primary);
+  color: var(--color-bg);
+  border: none;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--radius-main);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all var(--transition-main);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cookie-banner__accept:hover {
+  background: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--color-shadow);
+}
+
+.cookie-banner__link {
+  color: var(--color-text-secondary);
+  text-decoration: underline;
+  transition: color var(--transition-main);
+}
+
+.cookie-banner__link:hover {
+  color: var(--color-primary);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes cookieBannerIn {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (min-width: 480px) {
+  .cookie-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-lg);
+  }
+
+  .cookie-banner__text {
+    margin-bottom: 0;
+    margin-right: var(--spacing-lg);
+  }
+}
+
+@media (min-width: 768px) {
+  .site-header .container,
+  .site-footer .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .site-header .container {
+    padding: var(--spacing-md) 20px;
+  }
+
+  .logo {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 1279px) {
+  .site-header .container {
+    padding: var(--spacing-md) 20px;
+  }
+
+  .main-nav ul {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .site-footer .container {
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+  }
+
+  .footer-nav {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .footer-nav a {
+    padding: var(--spacing-xs) 0;
+  }
+
+  .footer-nav a + a:before {
+    display: none;
+  }
+
+  .site-footer p {
+    margin-top: var(--spacing-md);
+  }
+}
+
+@media (min-width: 1280px) {
+  .site-header .container {
+    padding: var(--spacing-md) 20px;
+  }
+
+  .main-nav ul {
+    display: flex;
+  }
+
+  .burger {
+    display: none;
+  }
+
+  .site-footer .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-nav {
+    flex-direction: row;
+    gap: var(--spacing-lg);
+  }
+
+  .footer-nav a {
+    padding: var(--spacing-xs) var(--spacing-md);
+  }
+
+  .site-footer p {
+    margin-top: 0;
+  }
+}
+
+/* Page Sections */
+.page-section {
+  padding: var(--spacing-xl) 0;
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .page-section {
+    padding: var(--spacing-xxl) 0;
+  }
+}
+
+@media (min-width: 1280px) {
+  .page-section {
+    padding: calc(var(--spacing-xxl) * 2) 0;
+  }
+}
+
+/* Footer Sections */
+.footer-sections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  width: 100%;
+  padding-bottom: calc(var(--spacing-lg) + 60px);
+}
+
+.footer-contacts {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.footer-contacts-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text);
+}
+
+.footer-nav-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  align-items: center;
+}
+
+.footer-nav-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  align-items: center;
+}
+
+.footer-policy-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  align-items: center;
+}
+
+.footer-nav-main a {
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  transition: color var(--transition-main);
+  padding: var(--spacing-xs) 0;
+}
+
+.footer-nav-main a:hover {
+  color: var(--color-primary);
+}
+
+.footer-policy-block a {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  transition: color var(--transition-main);
+  padding: var(--spacing-xs) 0;
+}
+
+.footer-policy-block a:hover {
+  color: var(--color-accent);
+}
+
+.footer-copyright {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  border-top: 1px solid var(--color-bg-secondary);
+  padding-top: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  background: var(--color-bg-secondary);
+  margin: 0;
+}
+
+.footer-copyright p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+  .footer-sections {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .footer-contacts {
+    text-align: left;
+  }
+
+  .footer-nav-block {
+    align-items: flex-start;
+  }
+
+  .footer-policy-block {
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 1280px) {
+  .footer-nav-block {
+    flex-direction: row;
+    gap: var(--spacing-xl);
+  }
+
+  .footer-contacts {
+    max-width: 300px;
+  }
+
+  .footer-nav-block {
+    flex: 1;
+    justify-content: flex-end;
+  }
+}

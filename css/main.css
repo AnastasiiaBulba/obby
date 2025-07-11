@@ -295,20 +295,25 @@ a:hover {
   color: var(--color-primary);
 }
 
-/* Cookie Banner - Modern Industrial Style */
+/* Cookie Banner - Industrial Rescue Theme */
 .cookie-banner {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  background: var(--color-bg-card);
-  border-top: 2px solid var(--color-primary);
-  padding: var(--spacing-md);
-  box-shadow: 0 -4px 20px var(--color-shadow-dark);
+  background: linear-gradient(
+    135deg,
+    var(--color-bg-card) 0%,
+    rgba(30, 30, 35, 0.95) 100%
+  );
+  border-top: 3px solid var(--color-primary);
+  padding: var(--spacing-lg);
+  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.4);
   z-index: 1000;
   transform: translateY(100%);
-  transition: transform var(--transition-main);
-  backdrop-filter: blur(10px);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  backdrop-filter: blur(15px);
+  border-left: 4px solid var(--color-accent);
 }
 
 .cookie-banner.show {
@@ -318,7 +323,9 @@ a:hover {
 .cookie-banner__text {
   margin-bottom: var(--spacing-md);
   color: var(--color-text-secondary);
-  line-height: 1.5;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .cookie-banner__actions {
@@ -329,32 +336,68 @@ a:hover {
 }
 
 .cookie-banner__accept {
-  background: var(--color-primary);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-accent) 100%
+  );
   color: var(--color-bg);
   border: none;
-  padding: var(--spacing-sm) var(--spacing-lg);
+  padding: var(--spacing-sm) var(--spacing-xl);
   border-radius: var(--radius-main);
   cursor: pointer;
-  font-weight: 600;
-  transition: all var(--transition-main);
+  font-weight: 700;
+  transition: all 0.3s ease;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.cookie-banner__accept::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
 }
 
 .cookie-banner__accept:hover {
-  background: var(--color-accent);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--color-shadow);
+  background: linear-gradient(
+    135deg,
+    var(--color-accent) 0%,
+    var(--color-primary) 100%
+  );
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.cookie-banner__accept:hover::before {
+  left: 100%;
 }
 
 .cookie-banner__link {
   color: var(--color-text-secondary);
-  text-decoration: underline;
-  transition: color var(--transition-main);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
 }
 
 .cookie-banner__link:hover {
   color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
 }
 
 /* Animations */
@@ -399,6 +442,34 @@ a:hover {
   .cookie-banner__text {
     margin-bottom: 0;
     margin-right: var(--spacing-lg);
+    flex: 1;
+  }
+
+  .cookie-banner__actions {
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 479px) {
+  .cookie-banner {
+    padding: var(--spacing-md);
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cookie-banner__text {
+    margin-bottom: var(--spacing-md);
+    font-size: 0.9rem;
+  }
+
+  .cookie-banner__actions {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .cookie-banner__accept {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: 0.85rem;
   }
 }
 

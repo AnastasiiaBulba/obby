@@ -27,12 +27,12 @@ function loadPartial(id, url, callback) {
         const fallbackHeader = `
           <header class="site-header">
             <div class="container">
-              <a href="index.html" class="logo">Obby Rescue</a>
+              <a href="./" class="logo">Obby Rescue</a>
               <nav class="main-nav">
                 <ul>
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="index.html#how-to-play">How to Play</a></li>
-                  <li><a href="index.html#gadgets">Gadgets & Tools</a></li>
+                  <li><a href="./">Home</a></li>
+                  <li><a href="./#how-to-play">How to Play</a></li>
+                  <li><a href="./#gadgets">Gadgets & Tools</a></li>
                   <li><a href="obbyrescue-news.html">News & Updates</a></li>
                   <li><a href="obbyrescue-contacts.html">Contact HQ</a></li>
                   <li><a href="obbyrescue-disclaimer.html">Legal Info</a></li>
@@ -77,12 +77,12 @@ function createMobileMenu() {
       <div class="mobile-menu-content">
         <button class="close-modal" id="close-mobile-menu" aria-label="Close menu">&times;</button>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#features">Features</a></li>
-          <li><a href="index.html#how-to-play">How to Play</a></li>
-          <li><a href="index.html#gadgets">Gadgets & Tools</a></li>
-          <li><a href="index.html#bridge-construction">Rescue Missions</a></li>
-          <li><a href="index.html#reviews">Reviews</a></li>
+          <li><a href="./">Home</a></li>
+          <li><a href="./#features">Features</a></li>
+          <li><a href="./#how-to-play">How to Play</a></li>
+          <li><a href="./#gadgets">Gadgets & Tools</a></li>
+          <li><a href="./#bridge-construction">Rescue Missions</a></li>
+          <li><a href="./#reviews">Reviews</a></li>
           <li><a href="obbyrescue-news.html">News & Updates</a></li>
           <li><a href="obbyrescue-contacts.html">Contact HQ</a></li>
           <li><a href="obbyrescue-disclaimer.html">Legal Info</a></li>
